@@ -1,4 +1,8 @@
 # MERGE SORT
+'''An array is divided into two equal parts until each elemnts become single and then the elements are arranged in 
+the sorted order. After the sorting of the elemnts the array is merged
+TIME COMPLEXITY = O(nlogn) in best,worst and average.1'''
+
 class Solution(object):
     def merge(self,nums):  #FUNCTION FOR DIVIDING A ARRAY INTO 2 EQUAL PARTS AS LEFT AND RIGHT & ARRANGE THE ELEMENTS
         i=j=0
@@ -31,6 +35,11 @@ class Solution(object):
             merge(nums,low,mid,high)     
             
 # SELECTION SORT
+'''In selection sort, firstly the minimum number of elements is find and the  this minimum element is the is swaped
+with the first element
+TIME COMPLEXITY = O(N^2)
+'''
+
 class Solution(object):
     def selection_sort(arr):
         n=len(arr)
@@ -40,6 +49,36 @@ class Solution(object):
                 if arr[j]<arr[mini_index]:
                     mini_index=j
             if mini_index != i:
-                arr[i],arr[mini_index]=arr[mini_index],arr[i]        
+                arr[i],arr[mini_index]=arr[mini_index],arr[i]   
+                
+# BUBBLE SORT
+'''In bubble sort, greater number of elements always swap and placed at the last.....there is multiple passes occur
+then entire array become sorted.........{do do elemnts he bss adjacent chck kr k max wal ko right side put krenge }
+
+TIME COMPLEXITY = {BEST: O(N), AVG & WORST: O(N^2)}
+SPACE COMPLEXITY = O(1)'''
+
+class Solution(object):
+    def bubble_sort(self,arr):
+        n=len(arr)
+        for i in range(n):           
+            for j in range(0,n-i-1):
+                if arr[j]>arr[j+1]:
+                    arr[j],arr[j+1]=arr[j+1],arr[j] 
+        return arr       
+    
+#INSERTION SORT
+'''Elements directly arrange in the sorted order simply by swapping 
+TIME COMPLEXITY = {BEST: O(N), AVG: O(N^2), WORST:O(N^2)}'''
+
+class Solution(object):
+    def insertion_sort(self,arr):
+        n=len(arr)
+        for i in range(1,n):
+            while j<=0 and arr[j+1]>key:
+                arr[j+1]=arr[j]
+                j-=1
+            arr[j+1]=key    
+        return arr                     
                    
                
