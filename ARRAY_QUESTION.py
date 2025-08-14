@@ -207,8 +207,70 @@ class Solution(object):
                 high= mid+1    
         return False        
            
+#LEADER IN AN ARRAY
+class Solution(Object):
+    def leader(self,arr):
+        n=(len(arr))
+        leaders=[]
+        max_from_right=arr[-1]
+        leaders.append(max_from_right)
+        for i in range(n-2,-1,-1):
+            if arr[i]>max_from_right:
+                max_from_right=arr[i]
+                leaders.append(max_from_right)  
+        leaders.reverse()  
+        return leaders       
+    
+# MAXIMUM SUBARRAY SUM
+class Solution(object):
+    def maximum_subarray(self,arr):
+        max_sum=[0]
+        current_sum=arr[0]            
+        for i in range(len(arr)):
+            current_sum=max(current_sum + arr[i], current_sum)   
+            max_sum=(max_sum,current_sum) 
+        return max_sum 
+# FIND THE DUPLICATE NUMBER IN THE ARRAY
+class Solution(Object):
+    def duplicateNumber(self,nums):
+        seen=set()                             #finding duplicate using hashset
+        for num in nums:
+            if num in seen:
+                return num
+            seen.add(num)
+            
+# REARRANGE THE ELEMENTS BY THE SIGN
+class Solution (Object):
+    def rarrangement(self,arr):
+        pos=[]
+        neg=[]
+        for i in range(len(arr)):
+            if arr[i]>0:
+                pos.append(arr[i])
+            else:
+                neg.append(arr[i])  
+        result=[]
+        for i in range(len(pos)):
+            result.append(pos[i])     
+            result.append(neg[i])                    
+        return result 
+    
+#in the case there are more numbers as negative or positive
+i=j=0
+while i<=len(pos) and j<=len(neg):
+    result.append(pos[i])     
+    result.append(neg[i])
+    i+=1
+    j+=1
+while i<=len(pos):
+    result.append(pos[i])  
+    i+=1
+while j<=len(neg):
+    result.append(neg[i])
+    j+=1
+return result    
+    
         
-                                
-                 
+               
                     
                                       
