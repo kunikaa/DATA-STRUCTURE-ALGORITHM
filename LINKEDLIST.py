@@ -73,3 +73,58 @@ def deleteNodeTail (head):
     current.next = None
     return head 
                    
+        
+        
+# INSERTION OF NODE IN A LINKDLIST
+
+# INSERTION AT HEAD
+class Node :
+    def __init__(self,data, next = None):
+        self.data = data
+        self.next = next 
+def insertionAtHead (head, value):
+        new_node = Node (value)
+        new_node.next  = head 
+        return new_node 
+    
+# INSERTION AT TAIL
+class Node :
+    def __init__(self,data, next = None):
+        self.data = data
+        self.next = next 
+def insertionAtTail (head , value):
+    new_node = Node(value)
+    current = head
+    while current.next:
+        current = current.next 
+    current.next = new_node
+    return head    
+                    
+#INSERTION AT GIVEN POSITION 
+class Node :
+    def __init__(self,data, next = None):
+        self.data = data
+        self.next = next 
+def insertionAtposition (head, value, position ):
+    new_node = Node(value)
+    current = head 
+    for _ in range (position -1 ):
+        current = current.next 
+    new_node = current_next 
+    current.next = new_node
+    return head
+
+#INSERTION BY VALUES
+class Node :
+    def __init__(self,data, next = None):
+        self.data = data
+        self.next = next                          
+def insertionByValues (values , head):
+    new_node = Node(values)
+    current = head 
+    while current and current.next.data != values:
+        current = current.next 
+    if current:
+        new_node.next = current.next 
+        current.next = new_node
+    return head         
