@@ -195,7 +195,7 @@ class Solution(object):
         
         while low<=high:
             mid=(low+high)//2
-            row=mid//cols
+             row=mid//cols
             columns=mid%cols
             mid_value=matrix[row][cols]
             
