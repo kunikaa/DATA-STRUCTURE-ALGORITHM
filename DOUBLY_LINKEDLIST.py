@@ -125,20 +125,13 @@ class DoublyLinkedList:
         current = self.head
         #  move to (position-1)th node
         for _ in range(position - 2):
-            if current is None or current.next is None:
-                return
             current = current.next
+        if current.next is None:
+            return 
+        current.next = current.next.next 
+        current.next.prev = current
+        return self.head 
         
-        node_to_delete = current.next
-        if node_to_delete is None:     #  agar position invalid hai
-            print("Position out of range")
-            return
-        
-        #  update links to bypass the node to delete
-        current.next = node_to_delete.next
-        if node_to_delete.next:       #  agar node to delete last nahi hai
-            node_to_delete.next.prev = current
-
         
         
         
