@@ -176,6 +176,36 @@ class Solution:
                     fast = fast.next 
                 return slow.data 
         return None
+
+#FINDING THE LENGTH OF THE LOOP IN THE LINKEDLIST
+class Solution:
+    def lengthOfLoop(self,head):
+        slow = head 
+        fast = head 
+        count = 0
+        while fast is not None and fast.next is not None:
+            slow = slow.next 
+            fast = fast.next.next 
+            if slow == fast :
+                count += 1
+                fast = fast.next
+        return count 
+    
+#DELETE THE MIDDLE OF THE NODE 
+class Solution:
+    def deleteMiddleOfNode(self,head):
+        if not head or not head.next:
+            return None 
+        slow = head 
+        fast = head 
+        prev = None
+        while fast is not None and fast.next is not None:
+            prev = slow 
+            slow = slow.next 
+            fast = fast.next.next
+        prev.next = slow.next                                      #slow hi middle h loop k bahar
+        return head         
+        
                  
             
         
