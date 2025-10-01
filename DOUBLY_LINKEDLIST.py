@@ -98,14 +98,13 @@ class doublyLinkedList:
             current = current.next 
         current.prev. next = None 
         return self.head    
-        
+  
+#DELETION AT Kth POSITION       
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        self.prev = None
-
-#DELETION AT Kth POSITION  
+        self.prev = None 
 
 class DoublyLinkedList:
     def __init__(self):
@@ -131,7 +130,71 @@ class DoublyLinkedList:
         current.next = current.next.next 
         current.next.prev = current
         return self.head 
+
+# DELETE ALL THE OCCURENCE OF A KEY IN DOUBLY LINKEDLIST 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+class Solution:
+    def deleteAllTheOccurennce(self,head,target):
+        temp = head 
+        while temp is not None and temp.next is not None:
+            if temp.data == target:
+                if temp == head:
+                    head = head.next 
+                    if head: 
+                        head.prev = None
+                else :
+                    if temp.prev:
+                        temp.prev.next = temp.next 
+                    if temp.next:
+                        temp.next.prev = temp.prev 
+            temp = temp.next 
+        return head  
         
+# FIND PAIRS WITH GIVEN SUM IN DOUBLY LINKEDLIST 
+class Solution:
+    def pairsOfSum(self,head ):
+        if not head or not head.next:
+            return None
+        left = head
+        right = head 
+        while right :
+            right = right.next
+        result = []
+        while left != right '''not a same node '''and left.prev != right'''both pointer should not cross''':
+            sum = left.data + right.data 
+            if sum == target: 
+                result.append((left.data, right.data))
+                left = left.next 
+                right = right.next 
+            elif s < target:
+                left = left.next 
+            else:
+                right = right.prev 
+        return result 
+    
+#REMOVES DUPLICATES FROM THE DOUBLY LINKEDLIST 
+class Solution:
+    def removeDuplicates(self,head):
+        if not head or not head.next:
+            return None 
+        temp = head 
+        while temp and temp.next  :
+            if temp.data == temp.next.data:
+                nxt = temp.next.next 
+                temp.next = nxt 
+                if nxt:
+                    nxt.prev = temp 
+            else: 
+                temp = temp.next 
+        return head 
+    
+     
+        
+                
         
         
         
