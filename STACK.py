@@ -37,6 +37,39 @@ class Stack:
             return None 
         print("STACK : ", self.stack[:self.top + 1 ])
         
-            
+# IMPLEMENTATION OF STACK USING LINKEDLIST 
+class Node:
+    def __init__(self,data):
+        self.next = None
+        self.data = data
+class StackLL:
+    def __init__(self):
+        self.top = None 
+    def isEmpty(self):
+        return self.top is None 
+    def push (self,data):
+        new_node = Node(data)
+        new_node.next = self.top 
+        self.top = new_node 
+        print("inserted")
+    def pop(self):
+        if isEmpty():
+            return None 
+        popped = self.top 
+        self.top = self.top.next 
+        return popped 
+    def peek(self):
+        if isEmpty():
+            return None 
+        return self.stack[self.top]
+    def display(self):
+        if isEmpty():
+            return None 
+        temp = self.top 
+        result = []
+        while temp:
+            result.append(temp.data)
+            temp = temp.next 
+        print(result)
         
         
