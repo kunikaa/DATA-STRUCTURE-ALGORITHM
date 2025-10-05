@@ -41,6 +41,40 @@ class Queue:
             result.append(self.queue[i])
         if i == rear:
             break             
-        
-        
-        
+
+# IMPLEMENTATION OF QUEUE BY USING LINKEDLIST 
+class Node :
+    def __init__(self,data):
+        self.data = data 
+        self.next = None 
+class QueueLL:
+    def __init__(self,data):
+        self.rear = self.front = None 
+    def isEmpty(self) :
+        if self.front is None:
+            return None 
+    def enqueue(self,data):
+        new_node = Node(data)
+        if self.rear is None :
+            self.rear = self.front = new_node
+            return  
+        self.rear.next = new_node 
+        self.rear = new_node      
+    def dequeue(self):
+        if isEmpty():
+            return None
+        data = self.front 
+        self.front = self.front.next 
+        if self.front is None:
+            self.rear = None 
+        return data 
+    def peek(self):
+        if isEmpty():
+            return None 
+        return self.front.data 
+    def display(self):
+        result = []
+        temp = front 
+        while temp:
+            result.append(temp.data)
+        return result 
