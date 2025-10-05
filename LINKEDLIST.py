@@ -127,4 +127,26 @@ def insertionByValues (values , head):
     if current:
         new_node.next = current.next 
         current.next = new_node
-    return head         
+    return head   
+
+# ROTATE A LINKEDLIST 
+class Solution:
+    def rotateALinkedlist(self,head,k):
+        if not head or not head.next:
+            return None
+        length = 0 
+        tail = head 
+        while tail is not None and tail.next is not None:
+            length += 1 
+            tail = tail.next 
+        if k % length ==0 :
+            return head 
+        new_tail = head 
+        for _ in range(length-k-1):
+            new_tail = new_tail.next 
+        new_head = new_tail.next 
+        #connecting old tail to old head 
+        tail.next = head 
+        #break the circle 
+        new_tail.next = None  
+        return new_head       
