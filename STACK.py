@@ -72,4 +72,26 @@ class StackLL:
             temp = temp.next 
         print(result)
         
+# IMPLEMENTATION OF STACK USING QUEUE 
+'''1.) COSTLY PUSH APPROACH'''
+from QUEUE import Queue 
+class stackUsingQueue:
+    def __init__(self):
+        self.q = Queue()
+    def push(self,x):
+        size = self.q.qsize()
+        self.q.put(x)
+        for _ in range(size):
+            self.q.put(self.q.get())
+    def pop(self):
+        if self.empty():
+            return None 
+        return self.q.get()
+    def top(self):
+        if self.empty():
+            return None 
+        return self.q.queue[0]
+    def empty(self):
+        return self.q.empty             
+        
         
