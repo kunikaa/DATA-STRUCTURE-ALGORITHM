@@ -78,3 +78,31 @@ class QueueLL:
         while temp:
             result.append(temp.data)
         return result 
+    
+# IMPLEMENTATION OF QUEUE USING STACK 
+class queueUsingStack :
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+    def push (self,x):
+        self.stack1.append(x)
+    def pop(self):
+        if not stack2 :
+            while stack2:
+                self.stack2.append(self.stack1.pop())
+        elif self.stack2:
+            return self.stack2.pop()
+        else:
+            return None 
+    def peek(self):
+        if not stack2 :
+            while stack2:
+                self.stack2.append(self.stack1.pop())
+        if self.stack2:
+            return self.stack2[-1]  
+        else:
+            returnn None
+    def empty(self):
+        return not self.stack1 and not self.stack2  
+            
+        
