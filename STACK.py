@@ -73,7 +73,7 @@ class StackLL:
         print(result)
         
 # IMPLEMENTATION OF STACK USING QUEUE 
-'''1.) COSTLY PUSH APPROACH'''
+'''1.) PUSH COSTLY APPROACH'''
 from QUEUE import Queue 
 class stackUsingQueue:
     def __init__(self):
@@ -92,6 +92,35 @@ class stackUsingQueue:
             return None 
         return self.q.queue[0]
     def empty(self):
-        return self.q.empty             
+        return self.q.empty         
+    
+'''2.) POP COSTLY APPROACH''' 
+from Queue  import Queue
+class stackUsingQueue:
+    def __init__(self):
+        self.q1 = Queue()
+        self.q2 = Queue()
+    def push(self,x):
+        self.q1.put(x)
+    def pop(self):
+        size = self.q1.q1size()
+        if empty():
+            return self.empty()
+        while size > 1:
+            self.q2.put(self.q1.get())
+        popped = self.q1.get()
+        self.q1 , self.q2 = self.q2 , self.q1 
+        return popped 
+    def peek(self):
+        if empty():
+            return self.empty()
+        while size > 1:
+            self.q2.put(self.q1.get())
+        top_elem = self.q1.get()
+        self.q1 , self.q2 = self.q2 , self.q1 
+        return top_elem 
+    def empty(self):
+        return self.q1.empty()
+         
         
         
