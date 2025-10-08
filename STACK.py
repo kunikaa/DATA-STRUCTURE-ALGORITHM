@@ -123,4 +123,35 @@ class stackUsingQueue:
         return self.q1.empty()
          
         
+'''INFIX : A + B
+   POSTFIX : AB+ 
+   PREFIX : + AB'''  
+
+# INFIX TO POSTFIX 
+
+def infixToPost(expression):
+    precedence = {'^': 3, '*': 2, '/':2, '+': 1, '-': 1}
+    stack = []
+    result = ' '
+    
+    for char in expression:
+        if isalnum():
+            result += char
+        elif char = '(':
+            stack.append(char)
+        elif char = ')':
+            while stack and stack[-1]!= '(':
+                result += char 
+        stack.pop()
+        else:
+            while stack and stack[-1]!= '(' and precedence.get(char,0) <= precedence.get(stack[-1],0):
+                result += stack.pop()
+            stack.append(char)
+    while stack:
+        result += char 
+    return result 
+                
+            
         
+            
+             
