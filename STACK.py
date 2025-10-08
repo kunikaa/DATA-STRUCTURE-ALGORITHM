@@ -217,7 +217,37 @@ def prefixToInfix(expression):
             result = f"({op2}{char}{op1})"
             stack.append(result )
     return stack[-1]            
-                       
+
+# POSTFIX TO PREFIX 
+
+def postfixToPrefix(expression):
+    stack = []
+    operator = set[('+','-','*','/','^')]
+    for char in expression:
+        if char.isalnum():
+            stack.append(char)
+        elif char in operator:
+            op1 = stack.pop()
+            op2 = stack.pop()
+            res = char + op2 + op1
+            stack.append(res) 
+    return stack[-1]                     
+            
+# PREFIX TO POSTFIX 
+
+def prefixToPostfix(expression):
+    stack = []
+    expression = expression[::-1]
+    operator = set[('+','-','*','/','^')]
+    for char in expression:
+        if char.isalnum():
+            stack.append(char)
+        elif char in operator:
+            op1 = stack.pop()
+            op2 = stack.pop()
+            res =  op1 + op2 + char
+            stack.append(res) 
+    return stack[-1]                     
             
         
             
