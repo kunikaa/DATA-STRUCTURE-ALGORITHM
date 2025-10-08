@@ -186,7 +186,23 @@ def infixToPostfix(exprssion):
             stack.append(char)
     while stack:
         result += char
-    return result[::-1]            
+    return result[::-1] 
+
+# POSTFIX TO INFIX 
+
+def postfixToInfix(expression):
+    operator = set(['+','-','*','/','^'])
+    stack = []
+    for char in expression :
+        if char isalnum():
+            stack.append(char)
+        elif char in operator:
+            op2 = stack.pop()
+            op1 = stack.pop()
+            result = f"({op1}{char}{op2})"
+            stack.append(result )
+    return stack[-1]            
+                       
             
         
             
