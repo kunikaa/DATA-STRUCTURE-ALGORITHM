@@ -151,6 +151,42 @@ def infixToPost(expression):
         result += char 
     return result 
                 
+# INFIX TO PREFIX 
+'''1) reverse the given string 
+   2) then change the '(' with this ')' and vice versa
+   3) convert the infix to postfix
+   4) then output which is generated is display in reverse manner '''
+   
+def infixToPostfix(exprssion):
+    precedence = {'^':3,'*':2,'/':2,'+':1,'-':1}
+    expression = exprssion[::-1]
+    reversed_expression = ' '
+    result = ' ' 
+    stack = []
+    for char in expression:
+        if char = '(':
+            reversed_expression += ')'
+        elif char = ')':
+            reversed_expression += '('
+        else:
+            reversed_expression += char 
+    expression = reversed_expression 
+    for char in expression:
+        if isalnum():
+            result += char
+        elif char = ' (':
+            stack.append(char )
+        elif char = ')':
+            while stack and stack[-1]!= '(':
+                result += char 
+            stack.pop()
+        else:
+            while (stack and stack[-1]!='(' and precedence.get(char,0) <= precedence.get(stack[-1],0)):
+                result += char 
+            stack.append(char)
+    while stack:
+        result += char
+    return result[::-1]            
             
         
             
